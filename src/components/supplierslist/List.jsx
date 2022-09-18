@@ -7,19 +7,17 @@ import TableHead from '@mui/material/TableHead';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
+import Button from '@mui/material/Button';
 
 const List = () => {
 
     const [list, setList] = useState([]);
-
-    console.log(list)
 
     useEffect(() =>{
         axiosInstance.get()
         .then(response => setList(response.data))
     }, [list])
 
-    console.log(list) 
     return(
         <>
         <Box sx={{ bgcolor: '#cfe8fc', p: "5rem"}} align="center">            
@@ -48,7 +46,9 @@ const List = () => {
                                     <TableCell sx={{fontSize:"24px"}}>{item?.contactTitle}</TableCell>                            
                                     <TableCell sx={{fontSize:"24px"}}>{item?.contactName}</TableCell>                            
                                     <TableCell sx={{fontSize:"24px"}}>{item.address?.country}</TableCell>
-                                    <TableCell sx={{fontSize:"24px"}}>details</TableCell>                
+                                    <TableCell>
+                                    <Button key={item} href={`Suppliers/${item.id}`} value={item.id} variant="text" sx={{fontSize:"24px", color: '#1976d2' }}>Details</Button>
+                                    </TableCell>                
                                 </>                        
                             </TableRow>))                        
                     }
