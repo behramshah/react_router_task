@@ -1,3 +1,4 @@
+import './addItem.css';
 import { useState } from "react";
 const axios = require('axios').default;
 
@@ -65,49 +66,51 @@ const Add = () => {
     }
 
     return (
-        <>
+        <div id='addContainer'>
          <h1>Add new supplier</h1>
-         <form>
-            <label>
+         <form id='formcustom'>
+            <label className='labelcustom'>
                 Company Name 
                 <input type="text" required onChange={changeName}/>
             </label>
-            <label>
+            <label className='labelcustom'>
                 Company Contact Name 
                 <input type="text" required onChange={changeContactName}/>
             </label>
-            <label>
+            <label className='labelcustom'>
                 Company Country 
                 <input type="text" required onChange={changeCountry}/>
             </label>
-            <label>
+            <label className='labelcustom'>
                 Company City 
                 <input type="text" required onChange={changeCity}/>
             </label>
-            <label>
+            <label className='labelcustom'>
                 Company Region 
                 <input type="text" onChange={changeRegion}/>
             </label>
-            <label>
+            <label className='labelcustom'>
                 Company Street 
                 <input type="text" required onChange={changeStreet}/>
             </label>
-            <label>
+            <label className='labelcustom'>
                 Company ZIP POSTAL Code 
                 <input type="text" required onChange={changePostal}/>
             </label>
-            <label>
+            <label className='labelcustom'>
                 Company phone 
-                <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required onChange={changePhone}/>
                 <small>Format: 123-456-7890</small>
+                <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required onChange={changePhone}/>
             </label>
-            <label>
+            <label className='labelcustom'>
                 Company Contact Title 
                 <input type="text" required onChange={changeTitle} />
             </label>
-            <button onClick={handleSubmit}>Submit</button>
+            <div id='button_container_custom'>
+                <button id='submitButtonCustom' onClick={handleSubmit}>Submit</button>
+            </div>
          </form>
-        </>
+        </div>
     )
 };
 
