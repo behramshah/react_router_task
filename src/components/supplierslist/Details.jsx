@@ -24,7 +24,7 @@ const Details = () => {
               About Supplier
             </Typography>
             <Typography variant="h5" component="div">
-               Company {supplier?.companyName}
+               The Company:  {supplier?.companyName}
             </Typography>
             <Typography sx={{ mb: 1.5 }} color="text.secondary">
                 Contact with {supplier?.contactTitle} of company, {supplier?.contactName}, phone number {supplier?.address?.phone}
